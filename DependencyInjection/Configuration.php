@@ -22,8 +22,8 @@ class Configuration implements ConfigurationInterface
                 ->scalarNode('parsingMode')
                     ->isRequired()
                     ->validate()
-                        ->ifNotInArray(array('html5', 'xhtml10'))
-                        ->thenInvalid('Invalid parsing mode (choose html5 or xhtm10)')
+                        ->ifNotInArray(array('html5', 'xhtml10', 'rawhtml'))
+                        ->thenInvalid('Invalid parsing mode (choose html5, xhtm10 or rawhtml)')
                 ->end();
 
         return $treeBuilder;

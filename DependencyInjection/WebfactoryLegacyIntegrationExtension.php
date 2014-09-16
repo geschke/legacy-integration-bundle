@@ -34,6 +34,9 @@ class WebfactoryLegacyIntegrationExtension extends Extension
             case 'xhtml10':
                 $container->setParameter('webfactory_legacy_integration.parser_class', 'Webfactory\Dom\XHTML10ParsingHelper');
                 break;
+            case 'rawhtml':
+                $container->setParameter('webfactory_legacy_integration.parser_class','Webfactory\Dom\RawHtmlParsingHelper');
+                break;
         }
 
         if (isset($config['legacyApplicationBootstrapFile'])) {

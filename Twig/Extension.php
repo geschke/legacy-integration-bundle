@@ -48,4 +48,12 @@ class Extension extends \Twig_Extension
     {
         return $this->container->get('webfactory_legacy_integration.xpath_helper');
     }
+
+    public function rawhtml()
+    {
+        $helper = $this->getXPathHelper();
+        return $helper->getContent();
+
+    }
+
 }

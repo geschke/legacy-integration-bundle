@@ -22,6 +22,12 @@ class XPathHelper
         $this->document = $parser->parseDocument($content);
     }
 
+    public function getContent()
+    {
+        return $this->parser->getDocument();
+    }
+
+
     public function getFragment($expression)
     {
         $xpath = $this->parser->createXPath($this->document);
