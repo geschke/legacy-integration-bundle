@@ -25,6 +25,7 @@ class BootstrapFileKernelAdaptor implements HttpKernelInterface
     {
         $file = $this->file;
         return LegacyCaptureResponseFactory::create(function () use ($file, $request) {
+            global $kernel; // find a really dirty way to Symfony2 kernel object...
             include($file);
         });
     }
